@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+
+	<ui:composition template="/WEB/layouts/layout-barra-lateral.xhtml">
+		
+		<ui:define name="conteudoBarra">	
+			<h:form>	
+				<center><h1><h:outputLabel value="VASOS" /></h1></center>
+				<br />
+				 <h:dataTable value ="#{listaVasoMB.listarVasos()}" var = "v" id="tabelaLogin" border="2" cellpadding="3" cellspacing="3" bodyrows="2">  
+			        <h:column> 
+			       		<f:facet name="header">  
+		                    <h:outputText value="ID"/>  
+		                </f:facet> 
+			            <h:outputText value="#{v.id}"/>  
+			        </h:column>  
+			        <h:column> 
+			        <f:facet name="header">  
+		                    <h:outputText value="DESCRIÇÃO"/>  
+		                </f:facet> 
+			            <h:outputText value="#{v.descricao}"/>  
+			        </h:column>	
+			        <h:column>  
+			        	<f:facet name="header">  
+		                    <h:outputText value="TEMPERATURA"/>  
+		                </f:facet>
+			            <h:outputText value="#{v.temp}"/>  
+			        </h:column> 		         
+			        <h:column> 
+			        	<f:facet name="header">  
+		                    <h:outputText value="UMIDADE SOLO"/>  
+		                </f:facet> 
+			            <h:outputText value="#{v.umidSolo}"/>  
+			        </h:column> 
+			        <h:column> 
+			        	<f:facet name="header">  
+		                    <h:outputText value="UMIDADE AR"/>  
+		                </f:facet>
+			            <h:outputText value="#{v.umidAr}"/>  
+			        </h:column> 			        
+			        <h:column> 
+			        	<f:facet name="header">  
+		                    <h:outputText value="BOMBA"/>  
+		                </f:facet>
+			            <h:outputText value="#{v.bomba}"/>  
+			        </h:column>
+			        <h:column>  
+			        	<f:facet name="header">  
+		                    <h:outputText value="BOMBA ATIVA"/>  
+		                </f:facet>
+			            <h:outputText value="#{v.bombaAT}"/>  
+			        </h:column>  
+			          
+			    </h:dataTable> 						
+				
+				<h:outputLabel  value="#{listaVasoMB.teste()}"></h:outputLabel>
+			</h:form>
+		</ui:define>
+		
+	</ui:composition>	
+</html>

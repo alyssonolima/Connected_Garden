@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext"> 
+
+<h:outputStylesheet name="style.css" />
+
+
+	<ui:composition template="WEB/layouts/layout-barra-lateral.xhtml">
+	
+		<ui:define name="barra-lateral"> 
+			<h:form>
+				<ul>
+					<li><h:commandLink action="#{loginMB.home}" value="Home" /> </li>
+					<li><h:commandLink action="#{loginMB.iniciarLogin}" value="Login" /></li>
+					<li><h:commandLink action="#{loginMB.sobre}" value="Sobre" /> </li>		
+				</ul>
+			</h:form>
+		</ui:define>
+		<ui:define name="conteudoBarra">		
+			<h:form>
+				<div >
+					<table cellpadding="5" cellspacing="2" align="center" id="tabelaCadastro" >			 				  
+					  	<tbody>
+					  		<tr>
+					  			<td colspan="2"><h:outputLabel value="CADASTRO NOVO USUÁRIO" /> </td>
+					  		</tr>
+					    	<tr>
+					     		<td><h:outputLabel value="Nome:" /></td>
+							    <td><h:inputText value="#{cadastroUsuarioMB.user.nome}" /> </td>					               
+					    	</tr>
+					    	<tr>
+					    		<td><h:outputLabel value="Nick:" /></td>
+					    		<td><h:inputText value="#{cadastroUsuarioMB.user.nick}" /> </td>
+					    	</tr>
+					    	<tr>
+					    		<td><h:outputLabel value="E-mail:" /> </td>
+					    		<td><h:inputText value="#{cadastroUsuarioMB.user.email}" /> </td>
+					    	</tr>
+					    	<tr>
+					    		<td><h:outputLabel value="Login:" /> </td>
+					    		<td><h:inputText value="#{cadastroUsuarioMB.user.login}" /> </td>
+					    	</tr>
+					    	<tr>
+					    		<td><h:outputLabel value="Senha:" /> </td>
+					    		<td><h:inputText value="#{cadastroUsuarioMB.senha1}" /> </td>
+					    	</tr>
+					    	<tr>
+					    		<td><h:outputLabel value="Confirmação de Senha:" /> </td>
+					    		<td><h:inputText value="#{cadastroUsuarioMB.senha2}" /> </td>
+					    	</tr>
+					    	<tr>
+					    		<td colspan="2">
+					    			<h:commandButton action="#{cadastroUsuarioMB.enviar()}" value="Cadastrar" />
+					    			<h:commandButton action="#{cadastroUsuarioMB.iniciarCadastro()}" value="Resetar" />
+					    		</td>				    		
+					    	</tr>
+					  </tbody>
+					</table>
+				</div>	
+			</h:form>
+		</ui:define>
+	</ui:composition>	
+</html>

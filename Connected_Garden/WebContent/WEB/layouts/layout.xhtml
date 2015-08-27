@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+
+	<ui:composition template="layout_Geral.xhtml">
+		<ui:define name="topo">
+			<center><h1>Connected Garden</h1></center>		 
+		</ui:define>		
+		
+		<ui:insert name="centro">			
+		</ui:insert>
+		
+		<ui:define name="rodape">					
+			<div id="imagens-rodape">		
+				<table cellpadding="25" cellspacing="2" align="center">			 				  
+				  	<tbody>
+				    	<tr>
+				     		<td><h:graphicImage value="/resources/images/ufrn-logo.png" /></td>
+						    <td><h:graphicImage value="/resources/images/imd-logo.png" /></td>
+						    <td><h:graphicImage value="/resources/images/npiti-logo.png" /></td> 
+						    <td><h:graphicImage value="/resources/images/labisic-logo.png" /></td>            
+				    	</tr>
+				  </tbody>
+				</table>							
+			</div>			
+		</ui:define>
+	</ui:composition>
+</html>

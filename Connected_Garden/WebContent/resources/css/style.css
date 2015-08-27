@@ -1,0 +1,167 @@
+
+td{color: black;}
+
+
+p{
+	background-color:burlywood;
+	color:green;
+	font-style:italic;
+	font-weight:bold;
+	font-size:30px;
+}
+
+li{
+	list-style-type: none;	
+}
+
+li.menu{
+	
+	float: left;
+	margin-right: 30px;	
+}
+
+ul.menu {
+	padding: 0;
+	margin: 0;
+	list-style-image: none;
+	list-style-type: none;
+}
+
+body{
+	background-image: url("./../images/fundo.jpg");	
+	height: auto;		
+}
+
+#topo{
+	background-image: url("./../images/topo.png");
+	background-repeat: repeat-x;
+	width: 80%;
+	height: 150px ;
+	margin-left: 10%;
+	background-color: white;			
+}
+
+#centro{
+	width: 80%;
+	height: auto;
+	display:table;	
+	margin-left: 10%;
+	background-color: white;	
+}
+
+#rodape{
+	width: 80%;
+	height: 200px;
+	margin-left: 10%;
+	background-color: white;	
+	float: left;
+	border-top-color: black;
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+
+#barra-lateral{
+	width: 15%;
+	height: 100%;
+	background-color: white;	
+	float: left;
+	
+}
+
+#conteudoBarra{
+	width: 79%;
+	border-left: 1px;	
+	border-left-color: black;
+	border-left-style: solid;
+	padding: 5%;	
+	margin-left: 15%;
+}
+
+#conteudo{
+	width: 80%;
+	padding: 2%;
+	border-color: red;
+	border-style: solid;
+	margin-left: 5%;	
+}
+
+.foto{
+	position: relative;
+	vertical-align: middle;	
+	padding-left: 30%;	
+}
+
+.menuLink{
+	width: 100%;
+	height: 30px;
+	padding-left: 5%;	
+}
+
+/* INICIO Cadastro de usuário */
+
+#tabelaCadastro, #tabelaLogin{
+	vertical-align: middle; 	
+	border: green; 
+	border-style: ridge; 
+	border-width: 10px;
+}
+
+/* FIM Cadastro de usuário */
+
+
+/* INICIO pagina inicial */
+
+#fotoUsuario{
+	border-color: green;
+	border-style: solid;
+	width: 120px;
+	height: 160px;
+	float: left;
+	display: inline-block;
+}
+
+#infoUsuario{
+	height: auto;
+	margin-top: 10px;	
+	display: inline-block;
+}
+
+#nomeUsuario{
+	padding-left: 25px;	
+	display: inline-block;
+}
+
+#slisds{
+	width: 100%;
+	height: 300px;
+	margin-top: 20px;	
+	border-color:  gray;
+	border-style: solid;
+}
+
+#informacoesRecentes{	
+	width: 100%;
+	height: 150px;
+	display: block;
+}
+
+#ultimasAtualizacoes, #ultimosAlertas{
+	border-color: maroon;
+	border-style: solid;
+	width: 40%;
+	height: 150px;
+}
+
+/* FIM pagina inicial */
+
+/* INICIO Alertas */
+
+#formCadastro{
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+	height: 100px;
+	padding: 2%;	
+}
+
+/* FIM Alertas */
