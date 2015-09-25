@@ -7,59 +7,31 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
 
-	<ui:composition template="/WEB/layouts/layout-barra-lateral.xhtml">
+	<ui:composition template="/WEB/layouts/layout.xhtml">
 		
-		<ui:define name="conteudoBarra">	
+		<ui:define name="conteudo">	
 			<h:form>	
-				<center><h1><h:outputLabel value="VASOS" /></h1></center>
-				<br />
-				 <h:dataTable value ="#{listaVasoMB.listarVasos()}" var = "v" id="tabelaLogin" border="2" cellpadding="3" cellspacing="3" bodyrows="2">  
-			        <h:column> 
-			       		<f:facet name="header">  
-		                    <h:outputText value="ID"/>  
-		                </f:facet> 
-			            <h:outputText value="#{v.id}"/>  
-			        </h:column>  
-			        <h:column> 
-			        <f:facet name="header">  
-		                    <h:outputText value="DESCRIÇÃO"/>  
-		                </f:facet> 
-			            <h:outputText value="#{v.descricao}"/>  
-			        </h:column>	
-			        <h:column>  
-			        	<f:facet name="header">  
-		                    <h:outputText value="TEMPERATURA"/>  
-		                </f:facet>
-			            <h:outputText value="#{v.temp}"/>  
-			        </h:column> 		         
-			        <h:column> 
-			        	<f:facet name="header">  
-		                    <h:outputText value="UMIDADE SOLO"/>  
-		                </f:facet> 
-			            <h:outputText value="#{v.umidSolo}"/>  
-			        </h:column> 
-			        <h:column> 
-			        	<f:facet name="header">  
-		                    <h:outputText value="UMIDADE AR"/>  
-		                </f:facet>
-			            <h:outputText value="#{v.umidAr}"/>  
-			        </h:column> 			        
-			        <h:column> 
-			        	<f:facet name="header">  
-		                    <h:outputText value="BOMBA"/>  
-		                </f:facet>
-			            <h:outputText value="#{v.bomba}"/>  
-			        </h:column>
-			        <h:column>  
-			        	<f:facet name="header">  
-		                    <h:outputText value="BOMBA ATIVA"/>  
-		                </f:facet>
-			            <h:outputText value="#{v.bombaAT}"/>  
-			        </h:column>  
-			          
-			    </h:dataTable> 						
-				
-				<h:outputLabel  value="#{listaVasoMB.teste()}"></h:outputLabel>
+				<center><h1>LOGIN</h1></center>								
+				<div>
+					<table class = "table" style="width: 350px; " align="center">			 				  
+					  	<tbody>
+					    	<tr>
+					     		<td><h:outputLabel value="Username:" /></td>
+							    <td><h:inputText value="#" /> </td>					               
+					    	</tr>
+					    	<tr>
+					    		<td><h:outputLabel value="Senha:" /></td>
+					    		<td><h:inputText value="#" /> </td>
+					    	</tr>				    	
+					    	<tr>
+					    		<td colspan="2">
+					    			<h:commandButton action="#" value="Logar" />
+					    			<h:commandButton action="#" value="Resetar" />
+					    		</td>				    		
+					    	</tr>
+				  		</tbody>
+					</table>	
+				</div>
 			</h:form>
 		</ui:define>
 		

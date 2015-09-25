@@ -8,26 +8,36 @@
       xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
 
 	<ui:composition template="layout_Geral.xhtml">
-		<ui:define name="topo">
-			<center><h1>Connected Garden</h1></center>		 
+		<ui:define name="topo">			
+			<div class="navbar navbar-inverse ">
+			  <div class="container">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <h:commandButton type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			      </h:commandButton>	
+			      <a class="navbar-brand" >Connected Garden</a>		      
+			    </div>
+		
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+				<li class="active"><a href="#">My Gardem <span class="sr-only">(current)</span></a></li>
+				<li><a href="#">My Alerts</a></li>
+				<li><a href="#">Profiler</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Logout</a></li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</div>
 		</ui:define>		
 		
-		<ui:insert name="centro">			
-		</ui:insert>
+		<ui:insert name="conteudo">			
+		</ui:insert>		
 		
-		<ui:define name="rodape">					
-			<div id="imagens-rodape">		
-				<table cellpadding="25" cellspacing="2" align="center">			 				  
-				  	<tbody>
-				    	<tr>
-				     		<td><h:graphicImage value="/resources/images/ufrn-logo.png" /></td>
-						    <td><h:graphicImage value="/resources/images/imd-logo.png" /></td>
-						    <td><h:graphicImage value="/resources/images/npiti-logo.png" /></td> 
-						    <td><h:graphicImage value="/resources/images/labisic-logo.png" /></td>            
-				    	</tr>
-				  </tbody>
-				</table>							
-			</div>			
-		</ui:define>
 	</ui:composition>
 </html>
