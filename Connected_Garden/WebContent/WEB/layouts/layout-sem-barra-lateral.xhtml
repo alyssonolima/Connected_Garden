@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext"> 
+
+
+	<ui:composition template="layout.xhtml">	
+		<ui:define name="centro">
+			<h:form>				
+				<div class="menuLink">					
+					<ul class="menu">
+						<li class="menu"><h:commandLink value="HOME" action="#{loginMB.logar()}" /> </li> 
+						<li class="menu"><h:commandLink value="MEU JARDIM" action="#{jardimMB.iniciarMeuJardim()}" /></li>
+						<li class="menu"><h:commandLink value="ALERTAS" action="#{alertaMB.iniciarListagem()}" /> </li>
+						<li class="menu">CADASTRO</li>
+						<li class="menu">AJUDA</li>
+						<li class="menu"><h:commandLink value="LOGOUT" action="#{loginMB.logout()}" /> </li>
+					</ul>
+				</div>
+			</h:form>
+			<div id="conteudo">
+				<div id="infoUsuario">
+					<h:form>
+					<div id="fotoUsuario">
+						<h:graphicImage style="width:120px; heigth: 160px;" value="/resources/images/fotoFlor.png" />
+					</div>
+					<div id="nomeUsuario">
+						<h1><h:outputText value="Alysson Rafael" /></h1>
+						<h2><h:outputText value="Alysson" /></h2>
+					</div>
+					</h:form>				
+				</div>
+				
+				<ui:insert name="conteudo"></ui:insert>
+			</div>
+		</ui:define>
+	</ui:composition>	
+</html>
