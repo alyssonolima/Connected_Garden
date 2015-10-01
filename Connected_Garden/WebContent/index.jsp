@@ -1,2 +1,2 @@
 
-<jsp:forward page="home2.jsf"/>
+<jsp:forward page="index.jsf"/>

@@ -8,7 +8,7 @@ import entidades.Usuario;
 
 @ManagedBean 
 @SessionScoped
-public class LoginMB {
+public class LoginMB25 {
 	
 	private static final String HOME = "/home";
 	private static final String LOGIN = "/login";
@@ -18,7 +18,7 @@ public class LoginMB {
 	
 	private Usuario user;
 	
-	public LoginMB(){
+	public LoginMB25(){
 		reset();
 	}
 	

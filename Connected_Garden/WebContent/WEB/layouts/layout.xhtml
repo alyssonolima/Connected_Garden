@@ -27,36 +27,32 @@
 	
 
 </h:head>
-<h:body style="background-attachment: fixed; background-color:#5D7124;">
+<h:body style="background-attachment: fixed;  background-color:#5D7124;">
 	
-	<b:navBar brand="Connected Garden" brandHref="home2.jsf" inverse="true" fixed="top" Style="margin:10%">
+	<div class="nav navbar">
+		<b:navBar brand="Connected Garden" brandHref="index.jsf" inverse="true" fixed="top" Style="margin:10%">
             <b:navbarLinks>
                 <b:navLink value="Home" href="#"></b:navLink>
-                <b:navLink value="Garden" href="#"></b:navLink>
+                <b:navLink value="Garden" href="#" ></b:navLink>
                 <b:navLink value="Profile" href="#"></b:navLink>
                 <b:navLink value="About" href="#"></b:navLink>
                 
             </b:navbarLinks>
             <h:form styleClass="navbar-form navbar-right">
                 <div class="form-group">
-                    <b:inputText placeholder="Email" fieldSize="sm"/>                    
+                    <b:inputText placeholder="Email" fieldSize="sm" value="#{loginMB.email}"/>                    
                 </div>
                 <div class="form-group">
-                    <b:inputText placeholder="Password" fieldSize="sm"/>
+                    <b:inputSecret placeholder="Password" fieldSize="sm" value="#{loginMB.password}"/>
                 </div>                 
-                <b:commandButton action="a" value="Sign in" look="success" icon="chevron-right" iconAlign="right"/>
-                <b:commandButton action="a" value="Register" look="warning" icon="chevron-right" iconAlign="right"/>
+                <b:commandButton action="#{loginMB.login()}" value="Sign in" look="success" icon="chevron-right" iconAlign="right"/>
+                <b:commandButton action="#{registerMB.initRegisterUser()}" value="Register" look="warning" icon="chevron-right" iconAlign="right"/>
             </h:form>
         </b:navBar>
-	
-	<div id="centro">
+	</div>
+	<div id="conteudo">
 		<ui:insert name="conteudo">						
 		</ui:insert>
-	</div>
-	
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+	</div>	
 </h:body>
 </html>

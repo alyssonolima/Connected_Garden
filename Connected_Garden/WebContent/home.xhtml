@@ -6,24 +6,13 @@
       xmlns:mj="http://mojarra.dev.java.net/mojarra_ext"> 
 
 
-	<ui:composition template="/WEB/layouts/layout-barra-lateral.xhtml">
-		<ui:define name="barra-lateral"> 
+	<ui:composition template="/WEB/layouts/layout.xhtml">
+		<ui:define name="conteudo"> 
 			<h:form>
-				<ul>
-					<li><h:commandLink action="#{loginMB.iniciarLogin}" value="Login" /></li>
-					<li><h:commandLink action="#{cadastroUsuarioMB.iniciarCadastro}" value="Cadastre-se" /></li>
-					<li><h:commandLink action="#{loginMB.sobre}" value="Sobre" /> </li>				
-				</ul>
+				<h:outputLabel value="LOGADO" />
 			</h:form>
 		</ui:define>
-		<ui:define name="conteudoBarra">	
-			<h:form>	
-				<h2>Bem vindo ao projeto Connected Garden, o seu vaso inteligente!</h2>
-				<h:commandLink action="#{loginMB.iniciarLogin}">
-				<h:graphicImage value="/resources/images/fotoCapa.jpg" id="fotoCapa" class="foto" />
-				</h:commandLink>
-			</h:form>
-		</ui:define>
+		
 		
 	</ui:composition>	
 </html>

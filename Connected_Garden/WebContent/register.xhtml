@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext"
+      xmlns:b="http://bootsfaces.net/ui"> 
+
+
+	<ui:composition template="/WEB/layouts/layout.xhtml">
+		<ui:define name="conteudo"> 
+			
+			<div class="row" >
+			
+			<div class="col-sm-8" >
+				<h:form class="form-horizontal" id="formGeral">
+				
+				  <div class="form-group">
+					<label for="inputName" class="col-sm-2 control-label">Picture</label>
+					<div class="col-sm-10">
+						<div class="col-xs-6 col-md-3">
+							<a href="#" class="thumbnail">
+								
+							</a>
+						</div>	
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label  class="col-sm-2 control-label">Name</label>
+					<div class="col-sm-10">
+					  <b:inputText styleClass="form-control" value="#{registerMB.name}"/> 
+					</div>
+				  </div>
+				<div class="form-group">
+					<label  class="col-sm-2 control-label">Nick</label>
+					<div class="col-sm-10">
+					  <b:inputText styleClass="form-control" value="#{registerMB.nickName}"/> 
+					</div>
+				  </div>		  
+				  <div class="form-group" >
+					<label  class="col-sm-2 control-label">Email</label>
+					<div class="col-sm-10">
+					  <b:inputText styleClass="form-control" value="#{registerMB.email}" type="email"/>
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label  class="col-sm-2 control-label">Password</label>
+					<div class="col-sm-10">
+					  <b:inputText styleClass="form-control" value="#{registerMB.password1}" type="password"/>
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label class="col-sm-2 control-label">Confirm Password</label>
+					<div class="col-sm-10">
+					  <b:inputText styleClass="form-control" value="#{registerMB.password2}" type="password"/>
+					</div>
+				  </div>		  
+				  <div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">					  
+					  <b:commandButton action="#{registerMB.registerUser()}" value="Register" look="success" icon="chevron-right" iconAlign="center"/>
+					</div>
+				  </div>
+				</h:form>
+			</div>
+			
+		</div>		
+			
+		</ui:define>		
+	</ui:composition>	
+</html>
