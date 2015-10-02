@@ -28,31 +28,35 @@
 
 </h:head>
 <h:body style="background-attachment: fixed;  background-color:#5D7124;">
-	
-	<div class="nav navbar">
-		<b:navBar brand="Connected Garden" brandHref="index.jsf" inverse="true" fixed="top" Style="margin:10%">
-            <b:navbarLinks>
-                <b:navLink value="Home" href="#"></b:navLink>
-                <b:navLink value="Garden" href="#" ></b:navLink>
-                <b:navLink value="Profile" href="#"></b:navLink>
-                <b:navLink value="About" href="#"></b:navLink>
-                
-            </b:navbarLinks>
-            <h:form styleClass="navbar-form navbar-right">
-                <div class="form-group">
-                    <b:inputText placeholder="Email" fieldSize="sm" value="#{loginMB.email}"/>                    
-                </div>
-                <div class="form-group">
-                    <b:inputSecret placeholder="Password" fieldSize="sm" value="#{loginMB.password}"/>
-                </div>                 
-                <b:commandButton action="#{loginMB.login()}" value="Sign in" look="success" icon="chevron-right" iconAlign="right"/>
-                <b:commandButton action="#{registerMB.initRegisterUser()}" value="Register" look="warning" icon="chevron-right" iconAlign="right"/>
-            </h:form>
-        </b:navBar>
+	<div id="all">
+		<div class="nav navbar">
+			<b:navBar brand="Connected Garden" brandHref="index.jsf" inverse="true" fixed="top" Style="margin:10%">
+	            <b:navbarLinks>
+	                <b:navLink value="Home" href="home.jsf"         />
+	                <b:navLink value="Garden" href="garden.jsf"     />
+	                <b:navLink value="Alerts" href="alerts.jsf"     />
+	                <b:navLink value="Profile" href="register.jsf"  />
+	                <b:navLink value="About" href="about.jsf"       />
+	                
+	            </b:navbarLinks>
+	            <h:form styleClass="navbar-form navbar-right">
+	                <div class="form-group">
+	                    <b:inputText placeholder="Email" fieldSize="sm" value="#{loginMB.email}"/>                    
+	                </div>
+	                <div class="form-group">
+	                    <b:inputSecret placeholder="Password" fieldSize="sm" value="#{loginMB.password}"/>
+	                </div>                 
+	                <b:commandButton action="#{loginMB.login()}" value="Sign in" look="success" icon="chevron-right" iconAlign="right" > 
+	                	<f:ajax render="all"></f:ajax>
+	                </b:commandButton>
+	                <b:commandButton action="#{registerMB.initRegisterUser()}" value="Register" look="warning" icon="chevron-right" iconAlign="right"/>
+	            </h:form>
+	        </b:navBar>
+		</div>
+		<div id="conteudo">
+			<ui:insert name="conteudo">						
+			</ui:insert>
+		</div>	
 	</div>
-	<div id="conteudo">
-		<ui:insert name="conteudo">						
-		</ui:insert>
-	</div>	
 </h:body>
 </html>

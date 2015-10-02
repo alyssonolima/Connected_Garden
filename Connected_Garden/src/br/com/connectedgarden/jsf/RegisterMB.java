@@ -9,7 +9,7 @@ import br.com.connectedgarden.dao.UserGardenDao;
 
 @ManagedBean 
 @SessionScoped
-public class RegisterMB {
+public class RegisterMB extends SuperMB {
 	
 	private String name;
 	private String nickName;

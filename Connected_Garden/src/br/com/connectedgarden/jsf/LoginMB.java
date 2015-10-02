@@ -6,10 +6,11 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import br.com.connectedgarden.dao.LoginDao;
+import javafx.util.Pair;
 
 @ManagedBean 
 @SessionScoped
-public class LoginMB {
+public class LoginMB extends SuperMB {
 	private String email;
 	private String password;
 	private LoginDao dao;
@@ -29,7 +30,8 @@ public class LoginMB {
 			return null;
 		
 		dao.login(email, password);
-		
+		setModulo(HOME);
+		setUserLogin(new Pair<String, String>(email, password));		
 		return "/home";
 	}	
 	
