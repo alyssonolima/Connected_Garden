@@ -31,7 +31,7 @@ public class LoginMB extends SuperMB {
 		
 		dao.login(email, password);
 		setModulo(HOME);
-		setUserLogin(new Pair<String, String>(email, password));		
+		//setUser();		
 		return "/home";
 	}	
 	

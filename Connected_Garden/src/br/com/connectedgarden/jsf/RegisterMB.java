@@ -43,7 +43,7 @@ public class RegisterMB extends SuperMB {
 		
 		
 		dao = new UserGardenDao();
-		dao.storeUserGarden(name,nickName, email, password1);
+		dao.storeUserGarden(name, email, nickName, password1);
 		
 		
 		return "Sucess!";

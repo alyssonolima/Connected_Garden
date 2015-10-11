@@ -3,6 +3,7 @@ package br.com.connectedgarden.jsf;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import br.com.gardenWebservice.entity.UserGarden;
 import javafx.util.Pair;
 
 @ManagedBean 
@@ -14,15 +15,13 @@ public class SuperMB {
 	public static final long GARDEN = 2;
 	public static final long ALERTS = 3;
 	public static final long PROFILE = 4;
-	public static final long ABOUT = 5;
-	
-	
+	public static final long ABOUT = 5;	
 	private long modulo;
-	private Pair<String,String> userLogin;
+	//private UserGarden user;
 		
 	public SuperMB(){
 		modulo = 0;
-		userLogin = new Pair<String, String>("", "");
+		//user = new UserGarden();
 	}
 
 	public long getModulo() {
@@ -32,20 +31,21 @@ public class SuperMB {
 	public void setModulo(long modulo) {
 		this.modulo = modulo;
 	}
-
-	public Pair<String, String> getUserLogin() {
-		return userLogin;
-	}
-
-	public void setUserLogin(Pair<String, String> userLogin) {
-		this.userLogin = userLogin;
-	}
 	
-	public boolean existUserLoged(){
-		if(userLogin.getKey() != null && !userLogin.getKey().equals("")  && userLogin.getValue() != null && !userLogin.getValue().equals(""))
+	
+	/*public boolean existUserLoged(){
+		if(user != null)
 			return true;
 		else 
 			return false;
 	}
+
+	public UserGarden getUser() {
+		return user;
+	}
+
+	public void setUser(UserGarden user) {
+		this.user = user;
+	}*/
 	
 }
