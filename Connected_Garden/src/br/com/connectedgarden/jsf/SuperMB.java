@@ -4,7 +4,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import br.com.gardenWebservice.entity.UserGarden;
-import javafx.util.Pair;
 
 @ManagedBean 
 @SessionScoped
@@ -17,11 +16,11 @@ public class SuperMB {
 	public static final long PROFILE = 4;
 	public static final long ABOUT = 5;	
 	private long modulo;
-	//private UserGarden user;
+	private UserGarden user;
 		
 	public SuperMB(){
 		modulo = 0;
-		//user = new UserGarden();
+		user = new UserGarden();
 	}
 
 	public long getModulo() {
@@ -33,7 +32,7 @@ public class SuperMB {
 	}
 	
 	
-	/*public boolean existUserLoged(){
+	public boolean existUserLoged(){
 		if(user != null)
 			return true;
 		else 
@@ -46,6 +45,6 @@ public class SuperMB {
 
 	public void setUser(UserGarden user) {
 		this.user = user;
-	}*/
+	}
 	
 }
