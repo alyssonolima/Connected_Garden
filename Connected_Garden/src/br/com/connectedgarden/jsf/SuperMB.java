@@ -3,7 +3,7 @@ package br.com.connectedgarden.jsf;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import br.com.gardenWebservice.entity.UserGarden;
+import br.com.connectedgarden.entity.UserGarden;
 
 @ManagedBean 
 @SessionScoped
@@ -16,7 +16,7 @@ public class SuperMB {
 	public static final long PROFILE = 4;
 	public static final long ABOUT = 5;	
 	private long modulo;
-	private UserGarden user;
+	private static UserGarden user;
 		
 	public SuperMB(){
 		modulo = 0;

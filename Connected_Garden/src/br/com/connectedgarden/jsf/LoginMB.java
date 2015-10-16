@@ -29,10 +29,14 @@ public class LoginMB extends SuperMB {
 		if(!validate())
 			return null;
 		
-		dao.login(email, password);
-		setModulo(HOME);
-		//setUser();		
-		return "/home";
+		setUser(dao.login(email, password));
+		if(getUser() != null){
+			setModulo(HOME);				
+			return "/home";
+		}else {
+			return "/index";
+		}
+		
 	}	
 	
 	public boolean validate(){
