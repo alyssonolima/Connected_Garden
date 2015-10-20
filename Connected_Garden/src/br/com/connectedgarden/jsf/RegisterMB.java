@@ -6,7 +6,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import br.com.connectedgarden.dao.UserGardenDao;
-import br.com.connectedgarden.entity.UserGarden;
 
 @ManagedBean 
 @SessionScoped
@@ -51,8 +50,7 @@ public class RegisterMB extends SuperMB {
 	}
 	
 	public boolean validateRegisterUserGarden(){
-		
-		UserGarden us = getUser();
+				
 		if(name == null || name == "")
 			return false;
 		

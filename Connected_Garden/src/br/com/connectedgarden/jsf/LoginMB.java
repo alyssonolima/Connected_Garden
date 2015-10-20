@@ -6,7 +6,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import br.com.connectedgarden.dao.LoginDao;
-import javafx.util.Pair;
 
 @ManagedBean 
 @SessionScoped
@@ -38,6 +37,12 @@ public class LoginMB extends SuperMB {
 		}
 		
 	}	
+	
+	public String logout(){
+		getSession().removeAttribute("userLogado");
+		getSession().invalidate();		
+		return "/index";
+	}
 	
 	public boolean validate(){
 		if(email == null || email == "")

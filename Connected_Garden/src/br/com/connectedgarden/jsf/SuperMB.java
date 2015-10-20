@@ -2,6 +2,8 @@ package br.com.connectedgarden.jsf;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 import br.com.connectedgarden.entity.UserGarden;
 
@@ -16,11 +18,10 @@ public class SuperMB {
 	public static final long PROFILE = 4;
 	public static final long ABOUT = 5;	
 	private long modulo;
-	private static UserGarden user;
-		
+	
+	
 	public SuperMB(){
-		modulo = 0;
-		user = new UserGarden();
+		modulo = 0;		
 	}
 
 	public long getModulo() {
@@ -31,20 +32,24 @@ public class SuperMB {
 		this.modulo = modulo;
 	}
 	
+	public HttpSession getSession() {  		  
+        return (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);  
+    }  
 	
 	public boolean existUserLoged(){
-		if(user != null)
+		if(getUser() != null)
 			return true;
 		else 
 			return false;
 	}
 
-	public UserGarden getUser() {
-		return user;
+	public void setUser(UserGarden user){
+		getSession().setAttribute("userLogado", user);
 	}
-
-	public void setUser(UserGarden user) {
-		this.user = user;
+	
+	public UserGarden getUser(){
+		return (UserGarden) getSession().getAttribute("userLogado");
 	}
+	
 	
 }

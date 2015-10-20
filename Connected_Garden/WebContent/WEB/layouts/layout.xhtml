@@ -31,25 +31,33 @@
 	<div id="all">
 		<div class="nav navbar">
 			<b:navBar brand="Connected Garden" brandHref="index.jsf" inverse="true" fixed="top" Style="margin:10%">
-	            <b:navbarLinks>
-	                <b:navLink value="Home" href="home.jsf"         />
-	                <b:navLink value="Garden" href="garden.jsf"     />
-	                <b:navLink value="Alerts" href="alerts.jsf"     />
-	                <b:navLink value="Profile" href="profile.jsf"  />
+	            <b:navbarLinks>	                
+	                <h:panelGroup rendered="#{superMB.existUserLoged()}">
+	                	<b:navLink value="Home" href="home.jsf"         />
+		                <b:navLink value="Garden" href="#{gardenMB.iniciar()}"     />
+		                <b:navLink value="Alerts" href="#{alertsMB.iniciar()}"     />
+		                <b:navLink value="Profile" href="profile.jsf"  />		                
+	                </h:panelGroup>
 	                <b:navLink value="About" href="about.jsf"       />
 	                
 	            </b:navbarLinks>
 	            <h:form styleClass="navbar-form navbar-right">
-	                <div class="form-group">
-	                    <b:inputText placeholder="Email" fieldSize="sm" value="#{loginMB.email}"/>                    
-	                </div>
-	                <div class="form-group">
-	                    <b:inputSecret placeholder="Password" fieldSize="sm" value="#{loginMB.password}"/>
-	                </div>                 
-	                <b:commandButton action="#{loginMB.login()}" value="Sign in" look="success" icon="chevron-right" iconAlign="right" > 
-	                	<f:ajax render="all"></f:ajax>
-	                </b:commandButton>
-	                <b:commandButton action="#{registerMB.initRegisterUser()}" value="Register" look="warning" icon="chevron-right" iconAlign="right"/>
+	            	<h:panelGroup rendered="#{!superMB.existUserLoged()}">
+		                <div class="form-group">
+		                    <b:inputText placeholder="Email" fieldSize="sm" value="#{loginMB.email}"/>                    
+		                </div>
+		                <div class="form-group">
+		                    <b:inputSecret placeholder="Password" fieldSize="sm" value="#{loginMB.password}"/>
+		                </div>                 
+		                <b:commandButton action="#{loginMB.login()}" value="Sign in" look="success" icon="chevron-right" iconAlign="right" > 
+		                	<f:ajax render="all"></f:ajax>
+		                </b:commandButton>
+		                <b:commandButton action="#{registerMB.initRegisterUser()}" value="Register" look="warning" icon="chevron-right" iconAlign="right"/>
+	                </h:panelGroup>
+	                <h:panelGroup rendered="#{superMB.existUserLoged()}">
+	                	<h:outputLabel value="#{superMB.user.nickName}" />
+	                	<b:commandButton action="#{loginMB.logout()}" value="Logout" icon="chevron-right" iconAlign="center"/>
+	                </h:panelGroup>
 	            </h:form>
 	        </b:navBar>
 		</div>
