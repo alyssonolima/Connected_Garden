@@ -44,8 +44,9 @@ public class GardenDao {
 			gardens.add(garden);							
 			
 		}
-	
-		return gardens.get(0);		
+		if(!gardens.isEmpty())
+			return gardens.get(0);
+		else return new Garden();
 	}
 	
 	public void storesGarden(Garden garden) throws SQLException{
