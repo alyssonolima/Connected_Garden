@@ -5,14 +5,34 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:mj="http://mojarra.dev.java.net/mojarra_ext"> 
 
-
 	<ui:composition template="/WEB/layouts/layout.xhtml">
 		<ui:define name="conteudo"> 
-			<h:form>
-				<h:outputLabel value="ALERTS" />
+			<h:form>		
+				
+				<h2>Alerts</h2><hr/>
+				<div class="row">				
+					<table class="table">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Descrip.</th>								
+								<th>Date Activation</th>
+								<th>Active</th>
+						  	</tr>
+						</thead>
+						<tbody>
+							<ui:repeat var="a" value="#{alertsMB.findAlerts()}" >
+								<tr>
+									<td><h:outputText value="#{a.id}" /></td>									
+									<td><h:outputText value="#{a.description}" /></td>									
+									<td><h:outputText value="#{a.activationDate}" /></td>
+									<td><h:outputText value="#{a.active}" /></td>
+								</tr>							
+							</ui:repeat>
+						</tbody>
+					</table>			
+				</div>							
 			</h:form>
-		</ui:define>
-		
-		
+		</ui:define>	
 	</ui:composition>	
 </html>
