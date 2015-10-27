@@ -42,7 +42,7 @@
 	                
 	            </b:navbarLinks>
 	            <h:form styleClass="navbar-form navbar-right">
-	            	<h:panelGroup rendered="true">
+	            	<h:panelGroup rendered="#{!superMB.existUserLoged()}">
 		                <div class="form-group">
 		                    <b:inputText placeholder="Email" fieldSize="sm" value="#{loginMB.email}"/>                    
 		                </div>
@@ -55,7 +55,7 @@
 		                <b:commandButton action="#{registerMB.initRegisterUser()}" value="Register" look="warning" icon="chevron-right" iconAlign="right"/>
 	                </h:panelGroup>
 	                <h:panelGroup rendered="#{superMB.existUserLoged()}">
-	                	<h:outputLabel value="#{superMB.user.nickName}" />
+	                	<h3>#{superMB.user.nickName} </h3>
 	                	<b:commandButton action="#{loginMB.logout()}" value="Logout" icon="chevron-right" iconAlign="center"/>
 	                </h:panelGroup>
 	            </h:form>
