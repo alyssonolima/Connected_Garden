@@ -28,7 +28,67 @@
 							</div>
 						</div>										
 					</div>		
-				</div>			
+				</div>
+				<hr/>
+				<h2>Pots</h2><hr/>
+				<table> 
+					<tbody>
+						<ui:repeat value="#{gardenMB.pots}" var="p">
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="panel panel-success">
+										<div class="panel-heading">
+											<h3 class="panel-title">#{p.description}</h3>
+										</div>
+										<div class="panel-body">
+											<div class="row">
+												<div class="col-xs-6 col-md-3">							
+													<h:graphicImage value="resources/images/ufrn-logo.png" />
+												</div>	
+											</div>
+										</div>
+										<table class="table">
+											<thead>
+											  <tr>
+												<th>#</th>
+												<th>Indice</th>
+												<th>Max</th>
+												<th>Reciver</th>
+											  </tr>
+											</thead>
+											<tbody>
+											  <tr>
+												<th scope="row">1</th>
+												<td>Temp</td>
+												<td>#{p.temp}</td>
+												<td>#{p.state.temp}</td>
+											  </tr>
+											  <tr>
+												<th scope="row">2</th>
+												<td>Soil Umidity</td>
+												<td>#{p.humSoil}</td>
+												<td>#{p.state.humSoil}</td>
+											  </tr>
+											  <tr>
+												<th scope="row">3</th>
+												<td>Air Umidity</td>
+												<td>#{p.humAir}</td>
+												<td>#{p.state.humAir}</td>
+											  </tr>
+											  <tr>
+												<th scope="row">3</th>
+												<td>Light</td>
+												<td>#{p.light}</td>
+												<td>#{p.state.light}</td>
+											  </tr>											  
+											</tbody>
+										</table>					
+									</div>								
+								</div><!-- /.col-sm-4 -->				
+							</div>
+						</ui:repeat>
+					</tbody>
+				</table>					
 			</h:form>
 		</ui:define>		
 	</ui:composition>	

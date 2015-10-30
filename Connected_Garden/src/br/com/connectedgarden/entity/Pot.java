@@ -1,5 +1,7 @@
 package br.com.connectedgarden.entity;
 
+import javax.persistence.Transient;
+
 public class Pot {
 
 	private int id;
@@ -18,6 +20,8 @@ public class Pot {
 		
 	private boolean active;
 	
+	@Transient
+	private StatePot state;
 	
 	public int getId() {
 		return id;
@@ -81,6 +85,14 @@ public class Pot {
 	
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+	public StatePot getState() {
+		return state;
+	}
+
+	public void setState(StatePot state) {
+		this.state = state;
 	}
 	
 

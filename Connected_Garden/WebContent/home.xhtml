@@ -9,7 +9,12 @@
 	<ui:composition template="/WEB/layouts/layout.xhtml">
 		<ui:define name="conteudo"> 
 			<h:form>
-				<h:outputLabel value="LOGADO - HOME" />
+				<h2>HOME</h2><hr/>
+				<h:outputLabel value="Welcome, #{superMB.user.nickName} !" /> <br />
+				<h:outputLabel value="Your last login was : 10/30/2015" /><br />				
+				<h:outputLabel value="You have 1 garden(s)" /> <br />
+				<h:outputLabel value="You have 5 pot(s)" />
+								
 			</h:form>
 		</ui:define>
 		

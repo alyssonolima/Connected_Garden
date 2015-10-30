@@ -1,13 +1,16 @@
 package br.com.connectedgarden.jsf;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import br.com.connectedgarden.dao.GardenDao;
 import br.com.connectedgarden.entity.Garden;
+import br.com.connectedgarden.entity.Pot;
 
 @ManagedBean
 @SessionScoped
@@ -19,6 +22,7 @@ public class GardenMB extends SuperMB{
 	private Garden garden;
 	private GardenDao dao;
 	private Garden newGarden;
+	private List<Pot> pots;
 	
 	public GardenMB(){
 		reset();
@@ -27,11 +31,12 @@ public class GardenMB extends SuperMB{
 	public void reset(){
 		garden = new Garden();
 		dao = new GardenDao();
+		pots = new ArrayList<Pot>();
 	}
 	
 	public String iniciar() throws SQLException{
 		garden = dao.findGardenByUser(getUser().getId(), 0);
-		
+		findPots();
 		return GARDEN;
 	}
 	
@@ -55,6 +60,17 @@ public class GardenMB extends SuperMB{
 		return GARDEN;
 	}
 	
+	
+	public String findPots() throws SQLException{
+		pots = dao.findPots(getUser().getId(), garden.getId());
+		
+		if(pots.isEmpty())
+			return null;
+		else 
+			return GARDEN;
+	}
+	
+	
 	public Garden getGarden() {
 		return garden;
 	}
@@ -77,5 +93,13 @@ public class GardenMB extends SuperMB{
 
 	public void setNewGarden(Garden newGarden) {
 		this.newGarden = newGarden;
+	}
+
+	public List<Pot> getPots() {
+		return pots;
+	}
+
+	public void setPots(List<Pot> pots) {
+		this.pots = pots;
 	}
 }
