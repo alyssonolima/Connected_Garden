@@ -21,7 +21,7 @@
 						  	</tr>
 						</thead>
 						<tbody>
-							<ui:repeat var="a" value="#{alertsMB.findAlerts()}" >
+							<ui:repeat var="a" value="#{alertsMB.alerts}" >
 								<tr>
 									<td><h:outputText value="#{a.id}" /></td>									
 									<td><h:outputText value="#{a.description}" /></td>									

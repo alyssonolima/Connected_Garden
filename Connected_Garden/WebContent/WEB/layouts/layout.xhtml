@@ -55,8 +55,8 @@
 		                <b:commandButton action="#{registerMB.initRegisterUser()}" value="Register" look="warning" icon="chevron-right" iconAlign="right"/>
 	                </h:panelGroup>
 	                <h:panelGroup rendered="#{superMB.existUserLoged()}">
-	                	<h3>#{superMB.user.nickName} </h3>
-	                	<b:commandButton action="#{loginMB.logout()}" value="Logout" icon="chevron-right" iconAlign="center"/>
+	                	<b>#{superMB.user.nickName}</b>
+	                	<b:commandButton action="#{loginMB.logout()}" value="Logout" look="danger"  icon="chevron-right" iconAlign="center"/>
 	                </h:panelGroup>
 	            </h:form>
 	        </b:navBar>

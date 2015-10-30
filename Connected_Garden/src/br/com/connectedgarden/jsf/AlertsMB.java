@@ -1,6 +1,7 @@
 package br.com.connectedgarden.jsf;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -17,13 +18,34 @@ public class AlertsMB extends SuperMB{
 	
 	private AlertsDao dao;
 	
+	private List<Alert> alerts;
+	
+	public AlertsMB(){
+		init();
+	}
+	
+	public void init(){
+		alerts = new ArrayList<Alert>();
+	}
+	
 	public String iniciar(){
 		return ALERTS;
 	}
 	
-	public List<Alert> findAlerts() throws SQLException{
-		dao = new AlertsDao();		
-		return dao.findAlerts(getUser().getId()); 
+	public String findAlerts() throws SQLException{
+		dao = new AlertsDao();
+		
+		alerts = dao.findAlerts(getUser().getId());
+		
+		return ALERTS;
+	}
+
+	public List<Alert> getAlerts() {
+		return alerts;
+	}
+
+	public void setAlerts(List<Alert> alerts) {
+		this.alerts = alerts;
 	}
 	
 }
