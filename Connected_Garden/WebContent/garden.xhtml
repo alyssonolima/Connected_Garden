@@ -31,11 +31,15 @@
 				</div>
 				<hr/>
 				<h2>Pots</h2><hr/>
+				<div class="row">
+								<div class="col-sm-6 col-md-4">
+								<div class="thumbnail">
+								<div class="caption">
 				<table> 
 					<tbody>
+					
 						<ui:repeat value="#{gardenMB.pots}" var="p">
-							<div class="row">
-								<div class="col-sm-4">
+							
 									<div class="panel panel-success">
 										<div class="panel-heading">
 											<h3 class="panel-title">#{p.description}</h3>
@@ -76,7 +80,7 @@
 												<td>#{p.state.humAir}</td>
 											  </tr>
 											  <tr>
-												<th scope="row">3</th>
+												<th scope="row">4</th>
 												<td>Light</td>
 												<td>#{p.light}</td>
 												<td>#{p.state.light}</td>
@@ -84,11 +88,15 @@
 											</tbody>
 										</table>					
 									</div>								
-								</div><!-- /.col-sm-4 -->				
-							</div>
+								
 						</ui:repeat>
+						
 					</tbody>
-				</table>					
+				</table>	
+				</div>	
+				</div>
+				</div><!-- /.col-sm-4 -->				
+							</div>			
 			</h:form>
 		</ui:define>		
 	</ui:composition>	
